@@ -799,7 +799,21 @@ public class JalaliCalendar extends Calendar {
         }
 
         public String toString() {
-            return getYear() + "/" + getMonth() + "/" + getDate();
+
+        	int yyyy = getYear();
+        	int MM = getMonth() + 1;
+        	int dd = getDate();
+        	
+        	String y = yyyy+"";
+        	String m = MM+"";
+        	String d = dd+"";
+        	
+        	if(MM < 10)
+        		m = "0"+MM;
+        	if(dd < 10)
+        		d = "0"+dd;
+        	
+        	return y + "-" + m + "-" + d;
         }
     }
 }
